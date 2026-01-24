@@ -9,12 +9,6 @@
 <!-- markdownlint-enable MD041 -->
 
 <p align="center">
-    <a href="https://github.com/php-forge/coding-standard/actions/workflows/linter.yml" target="_blank">
-        <img src="https://img.shields.io/github/actions/workflow/status/php-forge/coding-standard/linter.yml?style=for-the-badge&label=Super-Linter&logo=github" alt="Super-Linter">
-    </a>
-</p>
-
-<p align="center">
     <strong>Centralized ECS and Rector configuration for PHP projects</strong><br>
     <em>Share one set of rules across multiple repositories via Composer.</em>
 </p>
@@ -164,6 +158,11 @@ Follow the same convention used across PHP Forge repositories:
 [![PHP](https://img.shields.io/badge/%3E%3D8.1-777BB4.svg?style=for-the-badge&logo=php&logoColor=white)](https://www.php.net/releases/8.1/en.php)
 [![Latest Stable Version](https://img.shields.io/packagist/v/php-forge/coding-standard.svg?style=for-the-badge&logo=packagist&logoColor=white&label=Stable)](https://packagist.org/packages/php-forge/coding-standard)
 [![Total Downloads](https://img.shields.io/packagist/dt/php-forge/coding-standard.svg?style=for-the-badge&logo=composer&logoColor=white&label=Downloads)](https://packagist.org/packages/php-forge/coding-standard)
+
+## Quality code
+
+[![Super-Linter](https://img.shields.io/github/actions/workflow/status/php-forge/coding-standard/linter.yml?style=for-the-badge&label=Super-Linter&logo=github)](https://github.com/php-forge/coding-standard/actions/workflows/linter.yml)
+[![StyleCI](https://img.shields.io/badge/StyleCI-Passed-44CC11.svg?style=for-the-badge&logo=github&logoColor=white)](https://github.styleci.io/repos/1141292628?branch=main)
 
 ## License
 
