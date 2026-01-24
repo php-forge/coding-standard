@@ -15,11 +15,11 @@ composer run sync-metadata
 
 This command updates the following configuration files:
 
-| File               | Purpose                                      |
-| ------------------ | -------------------------------------------- |
-| `.editorconfig`    | Editor settings and code style configuration |
-| `.gitattributes`   | Git attributes and file handling rules       |
-| `.gitignore`       | Git ignore patterns and exclusions           |
+| File             | Purpose                                      |
+| ---------------- | -------------------------------------------- |
+| `.editorconfig`  | Editor settings and code style configuration |
+| `.gitattributes` | Git attributes and file handling rules       |
+| `.gitignore`     | Git ignore patterns and exclusions           |
 
 ## Shared configuration layout
 
