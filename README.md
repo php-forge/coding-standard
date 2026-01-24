@@ -164,6 +164,10 @@ Follow the same convention used across PHP Forge repositories:
 [![Super-Linter](https://img.shields.io/github/actions/workflow/status/php-forge/coding-standard/linter.yml?style=for-the-badge&label=Super-Linter&logo=github)](https://github.com/php-forge/coding-standard/actions/workflows/linter.yml)
 [![StyleCI](https://img.shields.io/badge/StyleCI-Passed-44CC11.svg?style=for-the-badge&logo=github&logoColor=white)](https://github.styleci.io/repos/1141292628?branch=main)
 
+## Our social networks
+
+[![Follow on X](https://img.shields.io/badge/-Follow%20on%20X-1DA1F2.svg?style=for-the-badge&logo=x&logoColor=white&labelColor=000000)](https://x.com/Terabytesoftw)
+
 ## License
 
 [![License](https://img.shields.io/badge/License-BSD--3--Clause-brightgreen.svg?style=for-the-badge&logo=opensourceinitiative&logoColor=white&labelColor=555555)](LICENSE)
