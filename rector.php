@@ -11,6 +11,8 @@ return static function (RectorConfig $rectorConfig): void {
     $rectorConfig->import(__DIR__ . '/config/rector.php');
 
     $rectorConfig->paths(
-        [__DIR__ . '/config'],
+        [
+            __DIR__ . '/config',
+        ],
     );
 };

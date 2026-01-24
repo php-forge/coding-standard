@@ -17,7 +17,7 @@
     },
     "autoload": {
         "psr-4": {
-            "PHPForge\\CodingStandard\\": "/"
+            "PHPForge\\CodingStandard\\": "./"
         }
     },
     "extra": {

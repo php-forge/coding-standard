@@ -75,13 +75,17 @@ declare(strict_types=1);
 $ecsConfigBuilder = require __DIR__ . '/vendor/php-forge/coding-standard/config/ecs.php';
 
 return $ecsConfigBuilder
-    ->withPaths([
-        __DIR__ . '/src',
-        __DIR__ . '/tests',
-    ])
-    ->withSkip([
-        // Add project-specific skips here.
-    ]);
+    ->withPaths(
+        [
+            __DIR__ . '/src',
+            __DIR__ . '/tests',
+        ],
+    )
+    ->withSkip(
+        [
+            // add project-specific skips here.
+        ],
+    );
 ```
 
 #### Rector (rector.php)
@@ -105,7 +109,7 @@ return static function (RectorConfig $rectorConfig): void {
         ],
     );
 
-    // Project-specific overrides can be added after the import.
+    // project-specific overrides can be added after the import.
     // $rectorConfig->skip([...]);
 };
 ```
@@ -128,10 +132,12 @@ return static function (RectorConfig $rectorConfig): void {
     $rectorConfig->import(__DIR__ . '/vendor/php-forge/coding-standard/config/rector.php');
     $rectorConfig->import(__DIR__ . '/rector-yii2.php');
 
-    $rectorConfig->paths([
-        __DIR__ . '/src',
-        __DIR__ . '/tests',
-    ]);
+    $rectorConfig->paths(
+        [
+            __DIR__ . '/src',
+            __DIR__ . '/tests',
+        ],
+    );
 };
 ```
 
@@ -141,10 +147,10 @@ Follow the same convention used across PHP Forge repositories:
 
 ```json
 {
-  "scripts": {
-    "ecs": "./vendor/bin/ecs --fix",
-    "rector": "./vendor/bin/rector process"
-  }
+    "scripts": {
+        "ecs": "./vendor/bin/ecs --fix",
+        "rector": "./vendor/bin/rector process"
+    }
 }
 ```
 

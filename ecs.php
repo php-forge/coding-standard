@@ -10,5 +10,7 @@ declare(strict_types=1);
 $ecsConfigBuilder = require __DIR__ . '/config/ecs.php';
 
 return $ecsConfigBuilder->withPaths(
-    [__DIR__ . '/config'],
+    [
+        __DIR__ . '/config',
+    ],
 );
