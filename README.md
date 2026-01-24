@@ -1,30 +1,22 @@
 <!-- markdownlint-disable MD041 -->
 <p align="center">
-    <picture>
-        <source media="(prefers-color-scheme: dark)" srcset="https://www.yiiframework.com/image/design/logo/yii3_full_for_dark.svg">
-        <source media="(prefers-color-scheme: light)" srcset="https://www.yiiframework.com/image/design/logo/yii3_full_for_light.svg">
-        <img src="https://www.yiiframework.com/image/design/logo/yii3_full_for_dark.svg" alt="Yii Framework" width="80%">
-    </picture>
-    <h1 align="center">Template</h1>
+    <a href="https://github.com/php-forge/coding-standard" target="_blank">
+        <img src="https://avatars.githubusercontent.com/u/103309199?s%25253D400%252526u%25253Dca3561c692f53ed7eb290d3bb226a2828741606f%252526v%25253D4" height="150px" alt="PHP Forge">
+    </a>
+    <h1 align="center">Coding standard</h1>
     <br>
 </p>
 <!-- markdownlint-enable MD041 -->
 
 <p align="center">
-    <a href="https://github.com/yii2-extensions/template/actions/workflows/build.yml" target="_blank">
-        <img src="https://img.shields.io/github/actions/workflow/status/yii2-extensions/template/build.yml?style=for-the-badge&label=PHPUnit&logo=github" alt="PHPUnit">
-    </a>
-    <a href="https://dashboard.stryker-mutator.io/reports/github.com/yii2-extensions/template/main" target="_blank">
-        <img src="https://img.shields.io/endpoint?style=for-the-badge&url=https%3A%2F%2Fbadge-api.stryker-mutator.io%2Fgithub.com%2Fyii2-extensions%2Ftemplate%2Fmain" alt="Mutation Testing">
-    </a>
-    <a href="https://github.com/yii2-extensions/template/actions/workflows/static.yml" target="_blank">
-        <img src="https://img.shields.io/github/actions/workflow/status/yii2-extensions/template/static.yml?style=for-the-badge&label=PHPStan&logo=github" alt="PHPStan">
+    <a href="https://github.com/php-forge/coding-standard/actions/workflows/linter.yml" target="_blank">
+        <img src="https://img.shields.io/github/actions/workflow/status/php-forge/coding-standard/linter.yml?style=for-the-badge&label=Super-Linter&logo=github" alt="Super-Linter">
     </a>
 </p>
 
 <p align="center">
-    <strong>A Yii2 extension template to create your own Yii2 extensions</strong><br>
-    <em>PHPUnit, PHPStan, Codeception, and best practices ready out of the box</em>
+    <strong>Centralized ECS and Rector configuration for PHP projects</strong><br>
+    <em>Share one set of rules across multiple repositories via Composer.</em>
 </p>
 
 ## Features
@@ -34,46 +26,144 @@
     <img src="./docs/svgs/features-mobile.svg" alt="Feature Overview" style="width: 100%;">
 </picture>
 
-## Quick start
-
-### Installation
+## Installation
 
 ```bash
-composer require github_username/github_repository-name
+composer require php-forge/coding-standard:^0.1 --dev
 ```
 
-### Basic Usage
+## Quick start
 
-Describe how to use your extension in a basic way.
+This package provides shared configuration files under `vendor/php-forge/coding-standard/config/`:
+
+- `config/ecs.php` (shared ECS rules, no paths)
+- `config/rector.php` (shared Rector rules, no paths)
+
+Consumer repositories should create wrapper config files at the repository root.
+Wrappers define the paths for that repository and import the shared configuration.
+
+### Generic repository
+
+#### ECS (ecs.php)
+
+Create `ecs.php` in your repository root:
+
+```php
+<?php
+
+declare(strict_types=1);
+
+/** @var \Symplify\EasyCodingStandard\Configuration\ECSConfigBuilder $ecsConfigBuilder */
+$ecsConfigBuilder = require __DIR__ . '/vendor/php-forge/coding-standard/config/ecs.php';
+
+return $ecsConfigBuilder->withPaths(
+    [
+        __DIR__ . '/src',
+        __DIR__ . '/tests',
+    ],
+);
+```
+
+To override or skip rules locally, apply changes after requiring the shared config:
+
+```php
+<?php
+
+declare(strict_types=1);
+
+/** @var \Symplify\EasyCodingStandard\Configuration\ECSConfigBuilder $ecsConfigBuilder */
+$ecsConfigBuilder = require __DIR__ . '/vendor/php-forge/coding-standard/config/ecs.php';
+
+return $ecsConfigBuilder
+    ->withPaths(
+        [
+            __DIR__ . '/src',
+            __DIR__ . '/tests',
+        ],
+    )
+    ->withSkip(
+        [
+            // add project-specific skips here.
+        ],
+    );
+```
+
+#### Rector (rector.php)
+
+Create `rector.php` in your repository root:
+
+```php
+<?php
+
+declare(strict_types=1);
+
+use Rector\Config\RectorConfig;
+
+return static function (RectorConfig $rectorConfig): void {
+    $rectorConfig->import(__DIR__ . '/vendor/php-forge/coding-standard/config/rector.php');
+
+    $rectorConfig->paths(
+        [
+            __DIR__ . '/src',
+            __DIR__ . '/tests',
+        ],
+    );
+
+    // project-specific overrides can be added after the import.
+    // $rectorConfig->skip([...]);
+};
+```
+
+### Yii2 repositories
+
+If you need framework-specific rules (Yii2), keep them in a separate config file (or a separate package)
+and import it after the base configuration. Do not mix Yii2-specific rules into the generic base.
+
+Example (Rector):
+
+```php
+<?php
+
+declare(strict_types=1);
+
+use Rector\Config\RectorConfig;
+
+return static function (RectorConfig $rectorConfig): void {
+    $rectorConfig->import(__DIR__ . '/vendor/php-forge/coding-standard/config/rector.php');
+    $rectorConfig->import(__DIR__ . '/rector-yii2.php');
+
+    $rectorConfig->paths(
+        [
+            __DIR__ . '/src',
+            __DIR__ . '/tests',
+        ],
+    );
+};
+```
+
+## Composer scripts
+
+Follow the same convention used across PHP Forge repositories:
+
+```json
+{
+    "scripts": {
+        "ecs": "./vendor/bin/ecs --fix",
+        "rector": "./vendor/bin/rector process"
+    }
+}
+```
 
 ## Documentation
 
-For detailed configuration options and advanced usage.
-
-- 📚 [Installation Guide](docs/installation.md)
-- ⚙️ [Configuration Reference](docs/configuration.md)
-- 💡 [Usage Examples](docs/examples.md)
-- 🧪 [Testing Guide](docs/testing.md)
-- 🛠️ [Development Guide](docs/development.md)
+- [Testing Guide](docs/testing.md)
+- [Development Guide](docs/development.md)
 
 ## Package information
 
 [![PHP](https://img.shields.io/badge/%3E%3D8.1-777BB4.svg?style=for-the-badge&logo=php&logoColor=white)](https://www.php.net/releases/8.1/en.php)
-[![Yii 2.0.x](https://img.shields.io/badge/2.0.53-0073AA.svg?style=for-the-badge&logo=yii&logoColor=white)](https://github.com/yiisoft/yii2/tree/2.0.53)
-[![Yii 22.0.x](https://img.shields.io/badge/22.0.x-0073AA.svg?style=for-the-badge&logo=yii&logoColor=white)](https://github.com/yiisoft/yii2/tree/22.0)
-[![Latest Stable Version](https://img.shields.io/packagist/v/yii2-extensions/template.svg?style=for-the-badge&logo=packagist&logoColor=white&label=Stable)](https://packagist.org/packages/yii2-extensions/template)
-[![Total Downloads](https://img.shields.io/packagist/dt/yii2-extensions/template.svg?style=for-the-badge&logo=composer&logoColor=white&label=Downloads)](https://packagist.org/packages/yii2-extensions/template)
-
-## Quality code
-
-[![Codecov](https://img.shields.io/codecov/c/github/yii2-extensions/template.svg?style=for-the-badge&logo=codecov&logoColor=white&label=Coverage)](https://codecov.io/github/yii2-extensions/template)
-[![PHPStan Level Max](https://img.shields.io/badge/PHPStan-Level%20Max-4F5D95.svg?style=for-the-badge&logo=github&logoColor=white)](https://github.com/yii2-extensions/template/actions/workflows/static.yml)
-[![Super-Linter](https://img.shields.io/github/actions/workflow/status/yii2-extensions/template/linter.yml?style=for-the-badge&label=Super-Linter&logo=github)](https://github.com/yii2-extensions/template/actions/workflows/linter.yml)
-[![StyleCI](https://img.shields.io/badge/StyleCI-Passed-44CC11.svg?style=for-the-badge&logo=github&logoColor=white)](https://github.styleci.io/repos/698621511?branch=main)
-
-## Our social networks
-
-[![Follow on X](https://img.shields.io/badge/-Follow%20on%20X-1DA1F2.svg?style=for-the-badge&logo=x&logoColor=white&labelColor=000000)](https://x.com/Terabytesoftw)
+[![Latest Stable Version](https://img.shields.io/packagist/v/php-forge/coding-standard.svg?style=for-the-badge&logo=packagist&logoColor=white&label=Stable)](https://packagist.org/packages/php-forge/coding-standard)
+[![Total Downloads](https://img.shields.io/packagist/dt/php-forge/coding-standard.svg?style=for-the-badge&logo=composer&logoColor=white&label=Downloads)](https://packagist.org/packages/php-forge/coding-standard)
 
 ## License
 
