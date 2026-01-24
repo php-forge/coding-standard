@@ -2,7 +2,7 @@
 
 ## 0.1.1 Under development
 
-- Enh 3: Add social media badge for following on X in `README.md` (@terabytesoftw)
+- Enh #3: Add social media badge for following on X in `README.md` (@terabytesoftw)
 
 ## 0.1.0 January 24, 2026
 
