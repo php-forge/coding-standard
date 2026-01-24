@@ -2,6 +2,8 @@
 
 ## 0.1.1 Under development
 
+- Enh 3: Add social media badge for following on X in `README.md` (@terabytesoftw)
+
 ## 0.1.0 January 24, 2026
 
 - Enh #1: Added shared configuration files under `config/` for Composer-based reuse (@terabytesoftw)
