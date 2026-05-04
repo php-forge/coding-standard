@@ -7,15 +7,21 @@ use PhpCsFixer\Fixer\Import\{NoUnusedImportsFixer, OrderedImportsFixer};
 use PhpCsFixer\Fixer\LanguageConstruct\NullableTypeDeclarationFixer;
 use PhpCsFixer\Fixer\Phpdoc\PhpdocTypesOrderFixer;
 use PhpCsFixer\Fixer\PhpUnit\PhpUnitTestCaseStaticMethodCallsFixer;
+use PhpCsFixer\Fixer\Strict\{DeclareStrictTypesFixer, StrictComparisonFixer, StrictParamFixer};
 use PhpCsFixer\Fixer\StringNotation\SingleQuoteFixer;
 use Symplify\EasyCodingStandard\Config\ECSConfig;
 
 /**
- * Shared ECS configuration.
+ * Shared base ECS configuration.
  *
- * This file intentionally contains no project-specific paths.
- * Consumer repositories should provide their own wrapper ecs.php
- * and set paths there.
+ * This file intentionally contains no project-specific paths and no PHP-version migration set. Consumer repositories
+ * should require either this file (no migration) or one of the version-pinned wrappers (`ecs-81.php`, `ecs-82.php`,
+ * `ecs-83.php`, `ecs-84.php`) and set their own paths.
+ *
+ * The "strict" prepared set is intentionally NOT used: it was deprecated in Symplify ECS `13` with guidance to enable
+ * the underlying fixers explicitly so the consumer keeps direct control over the strict-typing surface. The three
+ * fixers it used to bundle (`DeclareStrictTypesFixer`, `StrictComparisonFixer`, `StrictParamFixer`) are added as
+ * individual rules below to preserve behavior.
  */
 return ECSConfig::configure()
     ->withConfiguredRule(
@@ -85,12 +91,14 @@ return ECSConfig::configure()
         comments: true,
         docblocks: true,
         namespaces: true,
-        strict: true,
     )
     ->withRules(
         [
+            DeclareStrictTypesFixer::class,
             NoUnusedImportsFixer::class,
             OrderedTraitsFixer::class,
             SingleQuoteFixer::class,
+            StrictComparisonFixer::class,
+            StrictParamFixer::class,
         ],
     );

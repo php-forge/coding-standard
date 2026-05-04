@@ -5,6 +5,7 @@
     "keywords": [
         "coding-standard",
         "php",
+        "scaffold-provider",
         "yii2"
     ],
     "license": "BSD-3-Clause",
@@ -23,19 +24,38 @@
     "extra": {
         "branch-alias": {
             "dev-main": "0.2.x-dev"
+        },
+        "scaffold": {
+            "copy": [
+                ".editorconfig",
+                ".gitattributes",
+                ".gitignore",
+                ".styleci.yml",
+                ".ecrc",
+                ".prettierignore",
+                ".prettierrc.json",
+                ".stylelintignore",
+                "composer-require-checker.json",
+                ".github/linters/actionlint.yml",
+                ".github/linters/.codespellrc",
+                ".github/linters/.gitleaks.toml",
+                ".github/linters/.markdown-lint.yml",
+                "ecs.php",
+                "rector.php"
+            ],
+            "modes": {
+                ".gitignore": "append",
+                "composer-require-checker.json": "preserve",
+                "ecs.php": "preserve",
+                "rector.php": "preserve"
+            }
         }
     },
     "config": {
         "sort-packages": true
     },
     "scripts": {
-        "ecs": "./vendor/bin/ecs --fix",
-        "sync-metadata": [
-            "curl -fsSL -o .editorconfig https://raw.githubusercontent.com/yii2-extensions/template/main/.editorconfig",
-            "curl -fsSL -o .gitattributes https://raw.githubusercontent.com/yii2-extensions/template/main/.gitattributes",
-            "curl -fsSL -o .gitignore https://raw.githubusercontent.com/yii2-extensions/template/main/.gitignore",
-            "curl -fsSL -o .styleci.yml https://raw.githubusercontent.com/yii2-extensions/template/main/.styleci.yml"
-        ],
-        "rector": "./vendor/bin/rector process"
+        "ecs": "./vendor/bin/ecs check src --config src/ecs-83.php --fix",
+        "rector": "./vendor/bin/rector process src --config src/rector-83.php"
     }
 }
