@@ -30,12 +30,6 @@
             "source": "metadata/.styleci.yml",
             "mode": "replace"
         },
-        ".ecrc": {
-            "hash": "sha256:8227fada934c245fc98e67d691a9c8bee48b86adbbac9fbb6282057ca321d9b5",
-            "provider": "php-forge/baseline",
-            "source": "metadata/.ecrc",
-            "mode": "replace"
-        },
         ".prettierignore": {
             "hash": "sha256:d12c54d82c23d562342765ceda6897ca26b73eba0c700c127408c0a9bc17d595",
             "provider": "php-forge/baseline",
@@ -66,6 +60,12 @@
             "source": "metadata/.github/linters/.codespellrc",
             "mode": "replace"
         },
+        ".github/linters/.editorconfig-checker.json": {
+            "hash": "sha256:8227fada934c245fc98e67d691a9c8bee48b86adbbac9fbb6282057ca321d9b5",
+            "provider": "php-forge/baseline",
+            "source": "metadata/.github/linters/.editorconfig-checker.json",
+            "mode": "replace"
+        },
         ".github/linters/.gitleaks.toml": {
             "hash": "sha256:c500506cb29afadfd898384f12bcabdf5b494f6f2da982217e0a6e33b10f6ec6",
             "provider": "php-forge/baseline",
@@ -82,12 +82,6 @@
             "hash": "sha256:5c4071e2aa711e7d2e6bbb9c06d82399feab06ef5ff8feae4f9b6a61b383852f",
             "provider": "php-forge/baseline",
             "source": "metadata/.github/linters/actionlint.yml",
-            "mode": "replace"
-        },
-        ".github/linters/.editorconfig-checker.json": {
-            "hash": "sha256:8227fada934c245fc98e67d691a9c8bee48b86adbbac9fbb6282057ca321d9b5",
-            "provider": "php-forge/baseline",
-            "source": "metadata/.github/linters/.editorconfig-checker.json",
             "mode": "replace"
         }
     }

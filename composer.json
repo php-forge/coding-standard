@@ -18,8 +18,8 @@
         "symplify/easy-coding-standard": "^13.0"
     },
     "require-dev": {
-        "php-forge/baseline": "dev-main",
-        "yii2-extensions/scaffold": "dev-main"
+        "php-forge/baseline": "^0.1@dev",
+        "yii2-extensions/scaffold": "^0.1@dev"
     },
     "autoload": {
         "psr-4": {
@@ -32,7 +32,6 @@
         },
         "scaffold": {
             "manifest": "scaffold.json",
-            "auto": false,
             "allowed-packages": [
                 "php-forge/baseline"
             ]
