@@ -212,7 +212,7 @@ Follow the same convention used across PHP Forge repositories:
 
 ## Documentation
 
-- 📚 [Installation Guide](docs/installation.md)
+- 📥 [Installation Guide](docs/installation.md)
 
 ## Package information
 

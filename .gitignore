@@ -1,3 +1,10 @@
+# AI agents (if present)
+.codex
+.claude
+
+# asset build pipeline tracks its lockfile to keep CI builds reproducible.
+!src/assets/package-lock.json
+
 # codecoverage (if present)
 code_coverage
 
@@ -25,11 +32,11 @@ nbproject
 node_modules
 package-lock.json
 
-# phpstorm project (if present)
-.idea
-
 # phpactor (if present)
 .phpactor.*
+
+# phpstorm project (if present)
+.idea
 
 # phpunit (if present)
 .phpunit.cache
@@ -52,3 +59,4 @@ Thumbs.db
 .buildpath
 .project
 .settings
+.gitignore

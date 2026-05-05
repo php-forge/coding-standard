@@ -43,6 +43,7 @@
                 "rector.php"
             ],
             "modes": {
+                ".editorconfig": "append",
                 ".gitignore": "append",
                 "composer-require-checker.json": "preserve",
                 "ecs.php": "preserve",
