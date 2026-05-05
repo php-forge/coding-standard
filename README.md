@@ -127,15 +127,11 @@ return static function (RectorConfig $rectorConfig): void {
 };
 ```
 
-## Scaffolded distribution (optional)
+## Scaffolded wrappers (optional)
 
-This package is also a [`yii2-extensions/scaffold`](https://github.com/yii2-extensions/scaffold) provider.
-
-When the scaffold plugin is installed and authorized, `composer install` distributes the canonical metadata and
-super-linter configs into your repository root automatically; so the ECS / Rector wrappers above and the shared linter
-rules stay in lock-step across every repository that opts in.
-
-Opt in by adding the plugin and authorizing this package as a provider:
+This package is a [`yii2-extensions/scaffold`](https://github.com/yii2-extensions/scaffold) provider for the
+**root `ecs.php` and `rector.php` wrapper templates**. Consumers can opt in by allowing the plugin and listing this
+package as an authorised scaffold provider:
 
 ```bash
 composer require yii2-extensions/scaffold:^0.1 --dev
@@ -150,6 +146,7 @@ composer require yii2-extensions/scaffold:^0.1 --dev
     },
     "extra": {
         "scaffold": {
+            "auto": false,
             "allowed-packages": [
                 "php-forge/coding-standard"
             ]
@@ -158,44 +155,20 @@ composer require yii2-extensions/scaffold:^0.1 --dev
 }
 ```
 
-On the next `composer install` / `composer update`, these files land in your repository root:
-
-| File                                 | Mode       | Purpose                                                  |
-| ------------------------------------ | ---------- | -------------------------------------------------------- |
-| `.editorconfig`                      | `replace`  | Editor settings (UTF-8, LF, indent)                      |
-| `.gitattributes`                     | `replace`  | Text/binary handling, archive excludes                   |
-| `.gitignore`                         | `append`   | Common ignore patterns; project-specific lines preserved |
-| `.styleci.yml`                       | `replace`  | StyleCI config (PSR-12 + risky)                          |
-| `.ecrc`                              | `replace`  | editor-config-checker exclusions                         |
-| `.prettierignore`                    | `replace`  | Paths Prettier should skip                               |
-| `.prettierrc.json`                   | `replace`  | Prettier formatting rules                                |
-| `.stylelintignore`                   | `replace`  | Paths stylelint should skip                              |
-| `composer-require-checker.json`      | `preserve` | Composer require-checker whitelist (project-specific)    |
-| `.github/linters/actionlint.yml`     | `replace`  | actionlint config for Super-Linter                       |
-| `.github/linters/.codespellrc`       | `replace`  | codespell config                                         |
-| `.github/linters/.gitleaks.toml`     | `replace`  | gitleaks config                                          |
-| `.github/linters/.markdown-lint.yml` | `replace`  | markdownlint config                                      |
-| `ecs.php`                            | `preserve` | ECS wrapper for the project root                         |
-| `rector.php`                         | `preserve` | Rector wrapper for the project root                      |
-
-Mode semantics:
-
-- `replace`: lock-step with this package. Local edits trigger a warning and the file is skipped on update.
-  Use `vendor/bin/scaffold reapply <file> --force` to re-sync.
-- `append`: provider content is appended to the existing file. Project lines are never blown away.
-- `preserve`: file is written once on first install and never overwritten.
-
-The scaffolded `ecs.php` / `rector.php` ship with `83` as the default PHP target; switch to `81`, `82`, or `84` to match
-your minimum PHP version. Mode `preserve` protects your edits across `composer update`.
-
-### Scaffold commands
+With `auto: false`, the plugin does not run on `composer install`; sync the wrappers manually:
 
 ```bash
-vendor/bin/scaffold status                       # show which files are synced/modified/missing
-vendor/bin/scaffold diff <file>                  # diff between local and provider version
-vendor/bin/scaffold reapply [<file>] [--force]   # re-apply provider content
-vendor/bin/scaffold eject <file>                 # stop tracking a file (kept on disk)
+vendor/bin/scaffold reapply --provider=php-forge/coding-standard
 ```
+
+Both wrappers ship in mode `preserve` (written once on first install, never overwritten) so consumer edits to paths or
+PHP target version survive subsequent runs.
+
+## Related packages
+
+For dev environment scaffolding (editorconfig, gitignore, super-linter configs, etc.), see
+[`php-forge/baseline`](https://github.com/php-forge/baseline). The two packages are independent — adopt either, both,
+or neither.
 
 ## Composer scripts
 
@@ -212,7 +185,7 @@ Follow the same convention used across PHP Forge repositories:
 
 ## Documentation
 
-- 📥 [Installation Guide](docs/installation.md)
+- 📚 [Installation Guide](docs/installation.md)
 
 ## Package information
 

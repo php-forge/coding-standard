@@ -1,0 +1,10 @@
+{
+    "copy": [
+        { "from": "src/config/ecs.php", "to": "ecs.php" },
+        { "from": "src/config/rector.php", "to": "rector.php" }
+    ],
+    "modes": {
+        "ecs.php": "preserve",
+        "rector.php": "preserve"
+    }
+}

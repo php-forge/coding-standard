@@ -5,6 +5,10 @@ All notable changes to this project will be documented in this file.
 The format is based on [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## 0.3.0 Under development
+
+- feat!: ship `ecs.php` and `rector.php` wrappers from `src/config/` via `scaffold.json`; metadata moves to `php-forge/baseline`.
+
 ## 0.2.0 May 04, 2026
 
 - docs: add social media badge for following on X in `README.md`.

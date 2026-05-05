@@ -1,7 +1,7 @@
 {
     "name": "php-forge/coding-standard",
     "type": "library",
-    "description": "Centralized ECS, Rector, and tooling configurations for PHP projects.",
+    "description": "Centralized ECS and Rector configurations for PHP projects.",
     "keywords": [
         "coding-standard",
         "ecs",
@@ -10,10 +10,16 @@
         "scaffold-provider"
     ],
     "license": "BSD-3-Clause",
+    "minimum-stability": "dev",
+    "prefer-stable": true,
     "require": {
         "php": ">=8.3",
         "rector/rector": "^2.1",
         "symplify/easy-coding-standard": "^13.0"
+    },
+    "require-dev": {
+        "php-forge/baseline": "dev-main",
+        "yii2-extensions/scaffold": "dev-main"
     },
     "autoload": {
         "psr-4": {
@@ -25,34 +31,18 @@
             "dev-main": "0.3.x-dev"
         },
         "scaffold": {
-            "copy": [
-                ".editorconfig",
-                ".gitattributes",
-                ".gitignore",
-                ".styleci.yml",
-                ".ecrc",
-                ".prettierignore",
-                ".prettierrc.json",
-                ".stylelintignore",
-                "composer-require-checker.json",
-                ".github/linters/actionlint.yml",
-                ".github/linters/.codespellrc",
-                ".github/linters/.gitleaks.toml",
-                ".github/linters/.markdown-lint.yml",
-                "ecs.php",
-                "rector.php"
-            ],
-            "modes": {
-                ".editorconfig": "append",
-                ".gitignore": "append",
-                "composer-require-checker.json": "preserve",
-                "ecs.php": "preserve",
-                "rector.php": "preserve"
-            }
+            "manifest": "scaffold.json",
+            "auto": false,
+            "allowed-packages": [
+                "php-forge/baseline"
+            ]
         }
     },
     "config": {
-        "sort-packages": true
+        "sort-packages": true,
+        "allow-plugins": {
+            "yii2-extensions/scaffold": true
+        }
     },
     "scripts": {
         "ecs": "./vendor/bin/ecs check src --config src/ecs-83.php --fix",

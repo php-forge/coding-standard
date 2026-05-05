@@ -57,3 +57,4 @@ Thumbs.db
 .buildpath
 .project
 .settings
+phpunit.xml
