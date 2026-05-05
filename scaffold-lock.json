@@ -83,6 +83,12 @@
             "provider": "php-forge/baseline",
             "source": "metadata/.github/linters/actionlint.yml",
             "mode": "replace"
+        },
+        ".github/linters/.editorconfig-checker.json": {
+            "hash": "sha256:8227fada934c245fc98e67d691a9c8bee48b86adbbac9fbb6282057ca321d9b5",
+            "provider": "php-forge/baseline",
+            "source": "metadata/.github/linters/.editorconfig-checker.json",
+            "mode": "replace"
         }
     }
 }
