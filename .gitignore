@@ -2,9 +2,6 @@
 .codex
 .claude
 
-# asset build pipeline tracks its lockfile to keep CI builds reproducible.
-!src/assets/package-lock.json
-
 # codecoverage (if present)
 code_coverage
 
@@ -31,6 +28,7 @@ nbproject
 # node_modules (if present)
 node_modules
 package-lock.json
+!src/assets/package-lock.json
 
 # phpactor (if present)
 .phpactor.*
@@ -59,4 +57,3 @@ Thumbs.db
 .buildpath
 .project
 .settings
-.gitignore
