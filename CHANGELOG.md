@@ -9,6 +9,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - docs: add social media badge for following on X in `README.md`.
 - feat!: convert into `yii2-extensions/scaffold` provider; centralize ECS, Rector, metadata and super-linter standards under `src/`.
+- docs: Adjust logo size in `README.md` for better visibility.
 
 ## 0.1.0 January 24, 2026
 
