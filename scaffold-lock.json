@@ -1,0 +1,94 @@
+{
+    "providers": {
+        "php-forge/baseline": {
+            "version": "dev-main",
+            "path": "vendor/php-forge/baseline"
+        }
+    },
+    "files": {
+        ".editorconfig": {
+            "hash": "sha256:f0cafe474d79d769f397f2e8839c642ca3ef1a0ce38b6e9f82ed9e49bccf84f6",
+            "provider": "php-forge/baseline",
+            "source": "metadata/.editorconfig",
+            "mode": "append"
+        },
+        ".gitattributes": {
+            "hash": "sha256:88b62c371df01eac6e0298625a03baee372bd4048a6452cc2a1aeee0d49eba10",
+            "provider": "php-forge/baseline",
+            "source": "metadata/gitattributes",
+            "mode": "replace"
+        },
+        ".gitignore": {
+            "hash": "sha256:9e5e968a4f71578af06247a009998c24d27682fa88f4c0883de2e4bec80d45ca",
+            "provider": "php-forge/baseline",
+            "source": "metadata/.gitignore",
+            "mode": "append"
+        },
+        ".styleci.yml": {
+            "hash": "sha256:825f8c744ffbd2bc2369712e7192b8694129a8ecbc3fd91dc9300fccecf827bd",
+            "provider": "php-forge/baseline",
+            "source": "metadata/.styleci.yml",
+            "mode": "replace"
+        },
+        ".ecrc": {
+            "hash": "sha256:8227fada934c245fc98e67d691a9c8bee48b86adbbac9fbb6282057ca321d9b5",
+            "provider": "php-forge/baseline",
+            "source": "metadata/.ecrc",
+            "mode": "replace"
+        },
+        ".prettierignore": {
+            "hash": "sha256:d12c54d82c23d562342765ceda6897ca26b73eba0c700c127408c0a9bc17d595",
+            "provider": "php-forge/baseline",
+            "source": "metadata/.prettierignore",
+            "mode": "replace"
+        },
+        ".prettierrc.json": {
+            "hash": "sha256:4bf1ad096981736c7bd00136026e046f4b23fcefa1f8db84dcd0bacac19e97a2",
+            "provider": "php-forge/baseline",
+            "source": "metadata/.prettierrc.json",
+            "mode": "replace"
+        },
+        ".stylelintignore": {
+            "hash": "sha256:12186f0a5c42b4f894f7bdda1b1ca5ebc69f92d906aa9075a459d4d08fe4edc1",
+            "provider": "php-forge/baseline",
+            "source": "metadata/.stylelintignore",
+            "mode": "replace"
+        },
+        "composer-require-checker.json": {
+            "hash": "sha256:f4fbbc7876fa3f695b69dd7dc7ad4637d33dfab97fe445b476de26480f85055d",
+            "provider": "php-forge/baseline",
+            "source": "metadata/composer-require-checker.json",
+            "mode": "preserve"
+        },
+        ".github/linters/.codespellrc": {
+            "hash": "sha256:a9afcf57f68542d7cc308af4ca923ef6bde18de7a606b99190b8a15bdef612ef",
+            "provider": "php-forge/baseline",
+            "source": "metadata/.github/linters/.codespellrc",
+            "mode": "replace"
+        },
+        ".github/linters/.gitleaks.toml": {
+            "hash": "sha256:c500506cb29afadfd898384f12bcabdf5b494f6f2da982217e0a6e33b10f6ec6",
+            "provider": "php-forge/baseline",
+            "source": "metadata/.github/linters/.gitleaks.toml",
+            "mode": "replace"
+        },
+        ".github/linters/.markdown-lint.yml": {
+            "hash": "sha256:5d41c7471e15fea1b307a39791436179c5db6ae7c7daf00042d21750117bead4",
+            "provider": "php-forge/baseline",
+            "source": "metadata/.github/linters/.markdown-lint.yml",
+            "mode": "replace"
+        },
+        ".github/linters/actionlint.yml": {
+            "hash": "sha256:5c4071e2aa711e7d2e6bbb9c06d82399feab06ef5ff8feae4f9b6a61b383852f",
+            "provider": "php-forge/baseline",
+            "source": "metadata/.github/linters/actionlint.yml",
+            "mode": "replace"
+        },
+        ".github/linters/.editorconfig-checker.json": {
+            "hash": "sha256:8227fada934c245fc98e67d691a9c8bee48b86adbbac9fbb6282057ca321d9b5",
+            "provider": "php-forge/baseline",
+            "source": "metadata/.github/linters/.editorconfig-checker.json",
+            "mode": "replace"
+        }
+    }
+}

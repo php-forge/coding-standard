@@ -22,14 +22,21 @@
 *.ttf  binary
 
 # Exclude files from the archive
-/.github/dependabot.yml         export-ignore
-/.github/workflows              export-ignore
+/.editorconfig                  export-ignore
+/.gitattributes                 export-ignore
+/.github                        export-ignore
+/.gitignore                     export-ignore
+/.styleci.yml                   export-ignore
 /codeception.yml                export-ignore
+/composer-require-checker.json  export-ignore
 /docs                           export-ignore
+/ecs.php                        export-ignore
 /infection.json*                export-ignore
 /phpstan*.neon*                 export-ignore
 /phpunit.xml.dist               export-ignore
+/rector.php                     export-ignore
 /runtime                        export-ignore
+/scaffold-lock.json             export-ignore
 /tests                          export-ignore
 
 # Avoid merge conflicts in CHANGELOG
