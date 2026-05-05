@@ -13,18 +13,28 @@
     <em>Share one set of rules across multiple repositories via Composer.</em>
 </p>
 
-## Features
+## System requirements
 
-<picture>
-    <source media="(min-width: 768px)" srcset="./docs/svgs/features.svg">
-    <img src="./docs/svgs/features-mobile.svg" alt="Feature Overview" style="width: 100%;">
-</picture>
+- [`PHP`](https://www.php.net/downloads) 8.3 or higher.
+- [`Composer`](https://getcomposer.org/download/) for dependency management.
 
 ## Installation
 
 ```bash
-composer require php-forge/coding-standard:^0.2 --dev
+composer require php-forge/coding-standard:^0.3 --dev
 ```
+
+Or add the dependency manually to `composer.json`:
+
+```json
+{
+    "require-dev": {
+        "php-forge/coding-standard": "^0.3"
+    }
+}
+```
+
+Then run `composer update`.
 
 ## Configuration files
 
@@ -127,11 +137,11 @@ return static function (RectorConfig $rectorConfig): void {
 };
 ```
 
-## Scaffolded wrappers (optional)
+## Scaffolded distribution
 
 This package is a [`yii2-extensions/scaffold`](https://github.com/yii2-extensions/scaffold) provider for the
-**root `ecs.php` and `rector.php` wrapper templates**. Consumers can opt in by allowing the plugin and listing this
-package as an authorised scaffold provider:
+**root `ecs.php` and `rector.php` wrapper templates** (sourced from `src/config/` via `scaffold.json`). Consumers can
+opt in by allowing the plugin and listing this package as an authorised provider:
 
 ```bash
 composer require yii2-extensions/scaffold:^0.1 --dev
@@ -161,8 +171,8 @@ With `auto: false`, the plugin does not run on `composer install`; sync the wrap
 vendor/bin/scaffold reapply --provider=php-forge/coding-standard
 ```
 
-Both wrappers ship in mode `preserve` (written once on first install, never overwritten) so consumer edits to paths or
-PHP target version survive subsequent runs.
+Both wrappers ship in mode `preserve` — written once on first install, never overwritten — so consumer edits to paths
+or PHP target version survive subsequent runs.
 
 ## Related packages
 
@@ -182,10 +192,6 @@ Follow the same convention used across PHP Forge repositories:
     }
 }
 ```
-
-## Documentation
-
-- 📚 [Installation Guide](docs/installation.md)
 
 ## Package information
 
