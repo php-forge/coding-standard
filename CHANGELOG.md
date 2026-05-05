@@ -1,10 +1,16 @@
 # Changelog
 
-## 0.1.1 Under development
+All notable changes to this project will be documented in this file.
 
-- Enh #3: Add social media badge for following on X in `README.md` (@terabytesoftw)
+The format is based on [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/),
+and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
+
+## 0.2.0 Under development
+
+- docs: add social media badge for following on X in `README.md`.
+- feat!: convert into `yii2-extensions/scaffold` provider; centralize ECS, Rector, metadata and super-linter standards under `src/`.
 
 ## 0.1.0 January 24, 2026
 
-- Enh #1: Added shared configuration files under `config/` for Composer-based reuse (@terabytesoftw)
-- Bug #2: Update quality code section with `Super-Linter` and `StyleCI` badges (@terabytesoftw)
+- feat: add shared configuration files under `config/` for Composer-based reuse.
+- docs: update quality code section with `Super-Linter` and `StyleCI` badges.

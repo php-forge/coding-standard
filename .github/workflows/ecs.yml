@@ -19,3 +19,5 @@ permissions:
 jobs:
   easy-coding-standard:
     uses: yii2-framework/actions/.github/workflows/ecs.yml@main
+    with:
+      command-options: check src --config src/ecs-83.php --ansi

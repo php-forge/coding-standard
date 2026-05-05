@@ -1,64 +1,40 @@
-<svg fill="none" viewBox="0 0 1200 220" width="100%" height="340" xmlns="http://www.w3.org/2000/svg">
-    <foreignObject width="100%" height="100%">
-        <div xmlns="http://www.w3.org/1999/xhtml">
-            <style>
-                .container {
-                    display: grid;
-                    grid-template-columns: 1fr 1fr;
-                    gap: 20px;
-                    padding: 20px;
-                }
-                .alert-box {
-                    border-left: 4px solid #1f883d;
-                    padding: 12px;
-                    margin-bottom: 16px;
-                    border-radius: 6px;
-                    background: rgba(31, 136, 61, 0.1);
-                    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-                    width: 100%;
-                    box-sizing: border-box;
-                }
-                .alert-title {
-                    margin: 0 0 8px 0;
-                    font-weight: 600;
-                }
-                .alert-content {
-                    margin: 0;
-                    line-height: 1.5;
-                }
+<svg viewBox="0 0 1200 260" width="100%" height="240" xmlns="http://www.w3.org/2000/svg">
+    <style>
+        text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
+        .box-bg { fill: #e6f4ea; stroke: #a7cdb3; stroke-width: 1; }
+        .title { font-weight: 700; font-size: 16px; fill: #1a202c; }
+        .content { font-size: 13px; fill: #4a5568; }
+    </style>
 
-                /* Light mode */
-                    @media (prefers-color-scheme: light) {
-                    .alert-title { color: #000000; }
-                    .alert-content { color: #333333; }
-                    .alert-box { background: rgba(31, 136, 61, 0.1); }
-                }
+    <g>
+        <rect class="box-bg" x="20" y="20" width="570" height="100" rx="6"/>
+        <rect x="20" y="20" width="4" height="100" fill="#1f883d"/>
+        <text class="title" x="40" y="50">Composer Distribution</text>
+        <text class="content" x="40" y="78">Share one config set across every repository via Composer</text>
+        <text class="content" x="40" y="98">Wrappers reference vendor/php-forge/coding-standard/src/</text>
+    </g>
 
-                /* Dark mode */
-                @media (prefers-color-scheme: dark) {
-                    .alert-title { color: #ffffff; }
-                    .alert-content { color: #ffffff; }
-                    .alert-box { background: rgba(31, 136, 61, 0.2); }
-                }
-            </style>
-            <div class="container">
-                <div class="alert-box">
-                    <p class="alert-title"><strong>Centralized Configuration</strong></p>
-                    <p class="alert-content">Easy Coding Standard (ECS) • Rector</p>
-                </div>
-                <div class="alert-box">
-                    <p class="alert-title"><strong>Composer-Friendly Approach</strong></p>
-                    <p class="alert-content">Update rules in one place</p>
-                </div>
-                <div class="alert-box">
-                    <p class="alert-title"><strong>Designed to be Extended</strong></p>
-                    <p class="alert-content">Local overrides • Skips remain possible</p>
-                </div>
-                <div class="alert-box">
-                    <p class="alert-title"><strong>Minimal Consumer Repositories</strong></p>
-                    <p class="alert-content">Define only project paths</p>
-                </div>
-            </div>
-        </div>
-    </foreignObject>
+    <g>
+        <rect class="box-bg" x="610" y="20" width="570" height="100" rx="6"/>
+        <rect x="610" y="20" width="4" height="100" fill="#1f883d"/>
+        <text class="title" x="630" y="50">ECS &amp; Rector Configuration</text>
+        <text class="content" x="630" y="78">PER 3.0 + PSR-12 fixers and Rector type-declaration sets</text>
+        <text class="content" x="630" y="98">Per-version wrappers for PHP 8.1, 8.2, 8.3 and 8.4</text>
+    </g>
+
+    <g>
+        <rect class="box-bg" x="20" y="140" width="570" height="100" rx="6"/>
+        <rect x="20" y="140" width="4" height="100" fill="#1f883d"/>
+        <text class="title" x="40" y="170">Metadata &amp; Linter Standards</text>
+        <text class="content" x="40" y="198">.editorconfig, .gitignore, .gitattributes, Prettier and stylelint baselines</text>
+        <text class="content" x="40" y="218">Super-Linter configs: actionlint, codespell, gitleaks, markdownlint</text>
+    </g>
+
+    <g>
+        <rect class="box-bg" x="610" y="140" width="570" height="100" rx="6"/>
+        <rect x="610" y="140" width="4" height="100" fill="#1f883d"/>
+        <text class="title" x="630" y="170">Scaffold Provider</text>
+        <text class="content" x="630" y="198">yii2-extensions/scaffold integration distributes files on install</text>
+        <text class="content" x="630" y="218">Modes replace, append and preserve protect local edits</text>
+    </g>
 </svg>
