@@ -36,7 +36,6 @@
 /phpunit.xml.dist               export-ignore
 /rector.php                     export-ignore
 /runtime                        export-ignore
-/scaffold-lock.json             export-ignore
 /tests                          export-ignore
 
 # Avoid merge conflicts in CHANGELOG
