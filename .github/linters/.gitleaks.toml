@@ -1,6 +1,6 @@
 title = "gitleaks config"
 
-[allowlist]
+[[allowlists]]
 description = "Allow test fixture data with dummy credentials"
 paths = [
     '''tests/support/data/.*\.php''',

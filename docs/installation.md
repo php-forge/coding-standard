@@ -21,7 +21,7 @@ Add to your `composer.json`.
 
 ```json
 {
-    "require": {
+    "require-dev": {
         "php-forge/coding-standard": "^0.2"
     }
 }

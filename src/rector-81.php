@@ -3,12 +3,12 @@
 declare(strict_types=1);
 
 use Rector\Config\RectorConfig;
-use Rector\Set\ValueObject\{LevelSetList, SetList};
+use Rector\Set\ValueObject\LevelSetList;
 
 /**
  * Rector configuration targeting PHP `8.1` syntax.
  *
- * Layers `SetList::PHP_81` and `LevelSetList::UP_TO_PHP_81` on top of the shared base configuration.
+ * Layers `LevelSetList::UP_TO_PHP_81` on top of the shared base configuration.
  *
  * ```php
  * <?php
@@ -18,7 +18,7 @@ use Rector\Set\ValueObject\{LevelSetList, SetList};
  * use Rector\Config\RectorConfig;
  *
  * return static function (RectorConfig $rectorConfig): void {
- *     $rectorConfig->import(__DIR__ . '/vendor/php-forge/coding-standard/config/rector-81.php');
+ *     $rectorConfig->import(__DIR__ . '/vendor/php-forge/coding-standard/src/rector-81.php');
  *     $rectorConfig->paths([__DIR__ . '/src', __DIR__ . '/tests']);
  * };
  * ```
@@ -29,7 +29,6 @@ return static function (RectorConfig $rectorConfig): void {
     $rectorConfig->sets(
         [
             LevelSetList::UP_TO_PHP_81,
-            SetList::PHP_81,
         ],
     );
 };
