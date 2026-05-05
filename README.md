@@ -38,8 +38,7 @@ Then run `composer update`.
 
 ## Configuration files
 
-This package ships shared ECS and Rector configurations under
-`vendor/php-forge/coding-standard/src/`:
+This package ships shared ECS and Rector configurations under `vendor/php-forge/coding-standard/src/`:
 
 | File                | Purpose                                                 |
 | ------------------- | ------------------------------------------------------- |
@@ -59,8 +58,8 @@ PHP-CS-Fixer enforces matching syntax. The plain `ecs.php` / `rector.php` apply 
 
 ### ECS wrapper (ecs.php)
 
-Create `ecs.php` in your repository root, requiring the version that matches
-the minimum PHP your project supports (`ecs-83.php` for PHP 8.3, etc.):
+Create `ecs.php` in your repository root, requiring the version that matches the minimum PHP your project supports
+(`ecs-83.php` for PHP 8.3, etc.):
 
 ```php
 <?php
@@ -86,8 +85,7 @@ return $ecsConfigBuilder
 
 ### Rector wrapper (rector.php)
 
-Create `rector.php` in your repository root, importing the version that
-matches your minimum PHP target:
+Create `rector.php` in your repository root, importing the version that matches your minimum PHP target:
 
 ```php
 <?php
@@ -113,9 +111,8 @@ return static function (RectorConfig $rectorConfig): void {
 
 ### Yii2-specific rules
 
-For framework-specific rules, keep them in a separate config file (or a
-separate package) and import it after the base configuration. Do not mix Yii2
-rules into the generic base:
+For framework-specific rules, keep them in a separate config file (or a separate package) and import it after the base
+configuration. Do not mix Yii2 rules into the generic base:
 
 ```php
 <?php
@@ -171,13 +168,13 @@ With `auto: false`, the plugin does not run on `composer install`; sync the wrap
 vendor/bin/scaffold reapply --provider=php-forge/coding-standard
 ```
 
-Both wrappers ship in mode `preserve`; written once on first install, never overwritten so consumer edits to paths
-or PHP target version survive subsequent runs.
+Both wrappers ship in mode `preserve`; written once on first install, never overwritten so consumer edits to paths or
+PHP target version survive subsequent runs.
 
 ## Related packages
 
-For dev environment scaffolding, see [`php-forge/baseline`](https://github.com/php-forge/baseline). The two packages
-are independent; adopt either, both, or neither.
+For dev environment scaffolding, see [`php-forge/baseline`](https://github.com/php-forge/baseline). The two packages are
+independent; adopt either, both, or neither.
 
 ## Composer scripts
 
