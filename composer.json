@@ -1,16 +1,15 @@
 {
     "name": "php-forge/coding-standard",
     "type": "library",
-    "description": "Coding standards for PHP projects.",
+    "description": "Centralized ECS, Rector, and tooling configurations for PHP projects.",
     "keywords": [
         "coding-standard",
+        "ecs",
         "php",
-        "scaffold-provider",
-        "yii2"
+        "rector",
+        "scaffold-provider"
     ],
     "license": "BSD-3-Clause",
-    "minimum-stability": "dev",
-    "prefer-stable": true,
     "require": {
         "php": ">=8.3",
         "rector/rector": "^2.1",
@@ -23,7 +22,7 @@
     },
     "extra": {
         "branch-alias": {
-            "dev-main": "0.2.x-dev"
+            "dev-main": "0.3.x-dev"
         },
         "scaffold": {
             "copy": [
