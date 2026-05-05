@@ -171,14 +171,13 @@ With `auto: false`, the plugin does not run on `composer install`; sync the wrap
 vendor/bin/scaffold reapply --provider=php-forge/coding-standard
 ```
 
-Both wrappers ship in mode `preserve` — written once on first install, never overwritten — so consumer edits to paths
+Both wrappers ship in mode `preserve`; written once on first install, never overwritten so consumer edits to paths
 or PHP target version survive subsequent runs.
 
 ## Related packages
 
-For dev environment scaffolding (editorconfig, gitignore, super-linter configs, etc.), see
-[`php-forge/baseline`](https://github.com/php-forge/baseline). The two packages are independent — adopt either, both,
-or neither.
+For dev environment scaffolding, see [`php-forge/baseline`](https://github.com/php-forge/baseline). The two packages
+are independent adopt either, both, or neither.
 
 ## Composer scripts
 

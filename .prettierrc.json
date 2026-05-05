@@ -19,7 +19,7 @@
             }
         },
         {
-            "files": ["**/package.json", "**/package-lock.json", "**/scaffold-lock.json"],
+            "files": ["**/package.json", "**/package-lock.json"],
             "options": {
                 "tabWidth": 2
             }

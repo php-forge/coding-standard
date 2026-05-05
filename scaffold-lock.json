@@ -31,13 +31,13 @@
             "mode": "replace"
         },
         ".ecrc": {
-            "hash": "sha256:b6b65a789b169356effceb798df40aee94443eaef9839353809850d3ad8a7d7d",
+            "hash": "sha256:8227fada934c245fc98e67d691a9c8bee48b86adbbac9fbb6282057ca321d9b5",
             "provider": "php-forge/baseline",
             "source": "metadata/.ecrc",
             "mode": "replace"
         },
         ".prettierignore": {
-            "hash": "sha256:fcebacee7151573cd30da0c600c9feb5138cdb8a94b10d2e29ddab8d72ecd87b",
+            "hash": "sha256:d12c54d82c23d562342765ceda6897ca26b73eba0c700c127408c0a9bc17d595",
             "provider": "php-forge/baseline",
             "source": "metadata/.prettierignore",
             "mode": "replace"
