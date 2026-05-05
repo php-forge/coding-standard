@@ -177,7 +177,7 @@ or PHP target version survive subsequent runs.
 ## Related packages
 
 For dev environment scaffolding, see [`php-forge/baseline`](https://github.com/php-forge/baseline). The two packages
-are independent adopt either, both, or neither.
+are independent; adopt either, both, or neither.
 
 ## Composer scripts
 
