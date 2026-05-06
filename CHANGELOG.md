@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## 0.3.1 Under development
 
+- chore: skip `HeredocIndentationFixer` class to preserve heredoc alignment.
+
 ## 0.3.0 May 05, 2026
 
 - feat!: ship `ecs.php` and `rector.php` wrappers from `src/config/` via `scaffold.json`; metadata moves to `php-forge/baseline`.

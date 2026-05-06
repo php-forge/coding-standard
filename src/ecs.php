@@ -9,6 +9,7 @@ use PhpCsFixer\Fixer\Phpdoc\PhpdocTypesOrderFixer;
 use PhpCsFixer\Fixer\PhpUnit\PhpUnitTestCaseStaticMethodCallsFixer;
 use PhpCsFixer\Fixer\Strict\{DeclareStrictTypesFixer, StrictComparisonFixer, StrictParamFixer};
 use PhpCsFixer\Fixer\StringNotation\SingleQuoteFixer;
+use PhpCsFixer\Fixer\Whitespace\HeredocIndentationFixer;
 use Symplify\EasyCodingStandard\Config\ECSConfig;
 
 /**
@@ -26,15 +27,11 @@ use Symplify\EasyCodingStandard\Config\ECSConfig;
 return ECSConfig::configure()
     ->withConfiguredRule(
         ClassDefinitionFixer::class,
-        [
-            'space_before_parenthesis' => true,
-        ],
+        ['space_before_parenthesis' => true],
     )
     ->withConfiguredRule(
         NullableTypeDeclarationFixer::class,
-        [
-            'syntax' => 'union',
-        ],
+        ['syntax' => 'union'],
     )
     ->withConfiguredRule(
         OrderedClassElementsFixer::class,
@@ -80,9 +77,7 @@ return ECSConfig::configure()
     )
     ->withConfiguredRule(
         PhpUnitTestCaseStaticMethodCallsFixer::class,
-        [
-            'call_type' => 'self',
-        ],
+        ['call_type' => 'self'],
     )
     ->withFileExtensions(['php'])
     ->withPhpCsFixerSets(perCS30: true)
@@ -101,4 +96,7 @@ return ECSConfig::configure()
             StrictComparisonFixer::class,
             StrictParamFixer::class,
         ],
+    )
+    ->withSkip(
+        [HeredocIndentationFixer::class],
     );
