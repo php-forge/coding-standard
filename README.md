@@ -15,7 +15,7 @@
 
 ## System requirements
 
-- [`PHP`](https://www.php.net/downloads) 8.3 or higher.
+- [`PHP`](https://www.php.net/downloads) 8.1 or higher.
 - [`Composer`](https://getcomposer.org/download/) for dependency management.
 
 ## Installation
@@ -191,7 +191,7 @@ Follow the same convention used across PHP Forge repositories:
 
 ## Package information
 
-[![PHP](https://img.shields.io/badge/%3E%3D8.3-777BB4.svg?style=for-the-badge&logo=php&logoColor=white)](https://www.php.net/releases/8.3/en.php)
+[![PHP](https://img.shields.io/badge/%3E%3D8.1-777BB4.svg?style=for-the-badge&logo=php&logoColor=white)](https://www.php.net/releases/8.1/en.php)
 [![Latest Stable Version](https://img.shields.io/packagist/v/php-forge/coding-standard.svg?style=for-the-badge&logo=packagist&logoColor=white&label=Stable)](https://packagist.org/packages/php-forge/coding-standard)
 [![Total Downloads](https://img.shields.io/packagist/dt/php-forge/coding-standard.svg?style=for-the-badge&logo=composer&logoColor=white&label=Downloads)](https://packagist.org/packages/php-forge/coding-standard)
 
