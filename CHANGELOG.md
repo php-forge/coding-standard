@@ -5,7 +5,7 @@ All notable changes to this project will be documented in this file.
 The format is based on [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## 0.3.2 Under development
+## 0.3.2 May 22, 2026
 
 - chore: update `.gitleaks.toml` configuration and `scaffold-lock.json` version.
 - chore: update PHP version requirement to `8.1` in `README.md` and `composer.json`.
