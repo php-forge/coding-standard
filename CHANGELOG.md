@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## 0.3.2 Under development
 
 - chore: update `.gitleaks.toml` configuration and `scaffold-lock.json` version.
+- chore: update PHP version requirement to `8.1` in `README.md` and `composer.json`.
 
 ## 0.3.1 May 06, 2026
 
