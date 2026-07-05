@@ -195,9 +195,10 @@ Follow the same convention used across PHP Forge repositories:
 [![Latest Stable Version](https://img.shields.io/packagist/v/php-forge/coding-standard.svg?style=for-the-badge&logo=packagist&logoColor=white&label=Stable)](https://packagist.org/packages/php-forge/coding-standard)
 [![Total Downloads](https://img.shields.io/packagist/dt/php-forge/coding-standard.svg?style=for-the-badge&logo=composer&logoColor=white&label=Downloads)](https://packagist.org/packages/php-forge/coding-standard)
 
-## Quality code
+## Project status
 
-[![Super-Linter](https://img.shields.io/github/actions/workflow/status/php-forge/coding-standard/linter.yml?style=for-the-badge&label=Super-Linter&logo=github)](https://github.com/php-forge/coding-standard/actions/workflows/linter.yml)
+[![Quality](https://img.shields.io/github/actions/workflow/status/php-forge/coding-standard/quality.yml?style=for-the-badge&label=Quality&logo=github)](https://github.com/php-forge/coding-standard/actions/workflows/quality.yml)
+[![Security](https://img.shields.io/github/actions/workflow/status/php-forge/coding-standard/security.yml?style=for-the-badge&label=Security&logo=github)](https://github.com/php-forge/coding-standard/actions/workflows/security.yml)
 [![StyleCI](https://img.shields.io/badge/StyleCI-Passed-44CC11.svg?style=for-the-badge&logo=github&logoColor=white)](https://github.styleci.io/repos/1141292628?branch=main)
 
 ## Our social networks

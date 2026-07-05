@@ -1,7 +1,7 @@
 {
     "providers": {
         "php-forge/baseline": {
-            "version": "0.1.1",
+            "version": "0.1.3",
             "path": "vendor/php-forge/baseline"
         }
     },
@@ -31,7 +31,7 @@
             "mode": "replace"
         },
         ".prettierignore": {
-            "hash": "sha256:d12c54d82c23d562342765ceda6897ca26b73eba0c700c127408c0a9bc17d595",
+            "hash": "sha256:f4b6198902354d400815e6169439b5805da5ce8fb50797f9ec79c6f91e6c22a4",
             "provider": "php-forge/baseline",
             "source": "metadata/.prettierignore",
             "mode": "replace"
@@ -55,19 +55,19 @@
             "mode": "preserve"
         },
         ".github/linters/.codespellrc": {
-            "hash": "sha256:c89a5fae6e0bba775cede6add224570db555ebd607f2737c8efc15ba9a32fe92",
+            "hash": "sha256:b1a66a59f2042ac1601a277d09b21326aa8c85da8ba18592a138d1681760c9c7",
             "provider": "php-forge/baseline",
             "source": "metadata/.github/linters/.codespellrc",
             "mode": "replace"
         },
         ".github/linters/.editorconfig-checker.json": {
-            "hash": "sha256:8227fada934c245fc98e67d691a9c8bee48b86adbbac9fbb6282057ca321d9b5",
+            "hash": "sha256:83ce0f9e83f68fb23500061cb17836eaa5e3107df93cc4ccfb578a7500b7f958",
             "provider": "php-forge/baseline",
             "source": "metadata/.github/linters/.editorconfig-checker.json",
             "mode": "replace"
         },
         ".github/linters/.gitleaks.toml": {
-            "hash": "sha256:33589aa4b1b2bd29dc30603b2e590d75a83f59da3fcd8e0b7a148c59726efb85",
+            "hash": "sha256:4016e5e7237b525fd32eaf50c10577c21f452863ce95a901c059fb90d6b9318a",
             "provider": "php-forge/baseline",
             "source": "metadata/.github/linters/.gitleaks.toml",
             "mode": "replace"
@@ -76,12 +76,6 @@
             "hash": "sha256:5d41c7471e15fea1b307a39791436179c5db6ae7c7daf00042d21750117bead4",
             "provider": "php-forge/baseline",
             "source": "metadata/.github/linters/.markdown-lint.yml",
-            "mode": "replace"
-        },
-        ".github/linters/actionlint.yml": {
-            "hash": "sha256:5c4071e2aa711e7d2e6bbb9c06d82399feab06ef5ff8feae4f9b6a61b383852f",
-            "provider": "php-forge/baseline",
-            "source": "metadata/.github/linters/actionlint.yml",
             "mode": "replace"
         }
     }
