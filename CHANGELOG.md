@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## 0.3.3 Under development
 
+- ci: replace Super-Linter with reusable quality and security workflows, pin reusable ECS workflow, group Dependabot updates, and refresh linter and Gitleaks configs.
+
 ## 0.3.2 May 22, 2026
 
 - chore: update `.gitleaks.toml` configuration and `scaffold-lock.json` version.

@@ -1,5 +1,10 @@
 {
     "Exclude": [
+        "^\\.claude/",
+        "^\\.codex/",
+        "^\\.vscode/",
+        "^code_coverage/",
+        "^composer\\.lock$",
         "phpstan-baseline\\.neon$",
         "^tests/runtime/",
         "\\.min\\.css$",

@@ -10,16 +10,22 @@
         "scaffold-provider"
     ],
     "license": "BSD-3-Clause",
-    "minimum-stability": "dev",
-    "prefer-stable": true,
+    "authors": [
+        {
+            "name": "Wilmer Arambula",
+            "email": "terabytesoftw@gmail.com",
+            "homepage": "https://github.com/terabytesoftw",
+            "role": "Developer"
+        }
+    ],
     "require": {
         "php": ">=8.1",
-        "rector/rector": "^2.1",
-        "symplify/easy-coding-standard": "^13.0"
+        "rector/rector": "^2.4",
+        "symplify/easy-coding-standard": "^13.2"
     },
     "require-dev": {
         "php-forge/baseline": "^0.1",
-        "yii2-extensions/scaffold": "^0.1"
+        "yii2-extensions/scaffold": "^0.2"
     },
     "autoload": {
         "psr-4": {
