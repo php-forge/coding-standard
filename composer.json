@@ -24,7 +24,7 @@
         "symplify/easy-coding-standard": "^13.2"
     },
     "require-dev": {
-        "php-forge/baseline": "^0.1",
+        "php-forge/baseline": "^0.2",
         "yii2-extensions/scaffold": "^0.2"
     },
     "autoload": {
