@@ -5,6 +5,8 @@ All notable changes to this project will be documented in this file.
 The format is based on [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## 0.3.5 Under development
+
 ## 0.3.4 September 07, 2026
 
 - fix: support ECS `13.3.2+` with the native PER-CS set and explicit PHP `8.1-8.4` migration rules instead of the removed `withPhpCsFixerSets()` arguments.
