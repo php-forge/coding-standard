@@ -28,9 +28,9 @@ Or add the dependency manually to `composer.json`:
 
 ```json
 {
-    "require-dev": {
-        "php-forge/coding-standard": "^0.3"
-    }
+  "require-dev": {
+    "php-forge/coding-standard": "^0.3"
+  }
 }
 ```
 
@@ -146,19 +146,17 @@ composer require yii2-extensions/scaffold:^0.1 --dev
 
 ```json
 {
-    "config": {
-        "allow-plugins": {
-            "yii2-extensions/scaffold": true
-        }
-    },
-    "extra": {
-        "scaffold": {
-            "auto": false,
-            "allowed-packages": [
-                "php-forge/coding-standard"
-            ]
-        }
+  "config": {
+    "allow-plugins": {
+      "yii2-extensions/scaffold": true
     }
+  },
+  "extra": {
+    "scaffold": {
+      "auto": false,
+      "allowed-packages": ["php-forge/coding-standard"]
+    }
+  }
 }
 ```
 
@@ -182,10 +180,10 @@ Follow the same convention used across PHP Forge repositories:
 
 ```json
 {
-    "scripts": {
-        "ecs": "./vendor/bin/ecs --fix",
-        "rector": "./vendor/bin/rector process"
-    }
+  "scripts": {
+    "ecs": "./vendor/bin/ecs --fix",
+    "rector": "./vendor/bin/rector process"
+  }
 }
 ```
 

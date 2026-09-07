@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## 0.3.4 Under development
 
+- fix: support ECS `13.3.2+` with the native PER-CS set and explicit PHP `8.1-8.4` migration rules instead of the removed `withPhpCsFixerSets()` arguments.
+
 ## 0.3.3 July 05, 2026
 
 - ci: replace Super-Linter with reusable quality and security workflows, pin reusable ECS workflow, group Dependabot updates, and refresh linter and Gitleaks configs.
