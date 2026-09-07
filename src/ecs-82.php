@@ -7,7 +7,7 @@ declare(strict_types=1);
  *
  * Adds explicit ECS rules equivalent to the `@PHP82Migration` PHP-CS-Fixer set.
  *
- * @var \Symplify\EasyCodingStandard\Configuration\ECSConfigBuilder $builder
+ * @var \Symplify\EasyCodingStandard\Configuration\ECSConfigBuilder
  */
 $builder = require __DIR__ . '/ecs.php';
 
