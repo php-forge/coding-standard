@@ -12,18 +12,6 @@ use PhpCsFixer\Fixer\StringNotation\SingleQuoteFixer;
 use PhpCsFixer\Fixer\Whitespace\HeredocIndentationFixer;
 use Symplify\EasyCodingStandard\Config\ECSConfig;
 
-/**
- * Shared base ECS configuration.
- *
- * This file intentionally contains no project-specific paths and no PHP-version migration set. Consumer repositories
- * should require either this file (no migration) or one of the version-pinned wrappers (`ecs-81.php`, `ecs-82.php`,
- * `ecs-83.php`, `ecs-84.php`) and set their own paths.
- *
- * The "strict" prepared set is intentionally NOT used: it was deprecated in Symplify ECS `13` with guidance to enable
- * the underlying fixers explicitly so the consumer keeps direct control over the strict-typing surface. The three
- * fixers it used to bundle (`DeclareStrictTypesFixer`, `StrictComparisonFixer`, `StrictParamFixer`) are added as
- * individual rules below to preserve behavior.
- */
 return ECSConfig::configure()
     ->withConfiguredRule(
         ClassDefinitionFixer::class,
@@ -80,8 +68,8 @@ return ECSConfig::configure()
         ['call_type' => 'self'],
     )
     ->withFileExtensions(['php'])
-    ->withPhpCsFixerSets(perCS30: true)
     ->withPreparedSets(
+        perCs: true,
         cleanCode: true,
         comments: true,
         docblocks: true,

@@ -21,10 +21,10 @@
     "require": {
         "php": ">=8.1",
         "rector/rector": "^2.4",
-        "symplify/easy-coding-standard": "^13.2"
+        "symplify/easy-coding-standard": "^13.3.2"
     },
     "require-dev": {
-        "php-forge/baseline": "^0.1",
+        "php-forge/baseline": "^0.2",
         "yii2-extensions/scaffold": "^0.2"
     },
     "autoload": {
@@ -50,6 +50,7 @@
         }
     },
     "scripts": {
+        "tests": "php tests/ecs.php",
         "ecs": "./vendor/bin/ecs check src --config src/ecs-83.php --fix",
         "rector": "./vendor/bin/rector process src --config src/rector-83.php"
     }
