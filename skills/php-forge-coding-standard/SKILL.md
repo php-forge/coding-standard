@@ -1,6 +1,6 @@
 ---
 name: php-forge-coding-standard
-description: Use when selecting PHP Forge ECS and Rector configurations for a supported PHP target.
+description: Configure php-forge/coding-standard in a PHP project by selecting its ECS and Rector entrypoints for the project's minimum PHP version, writing or reviewing the root wrappers and verifying them with non-mutating runs. Use for this package rather than general ECS or Rector rule questions.
 license: BSD-3-Clause
 ---
 
@@ -16,9 +16,15 @@ unverified current documentation. Installing this skill does not install depende
 ## Package contracts
 
 Select `src/ecs-81.php` through `ecs-84.php` and the corresponding Rector configuration from the consumer's minimum
-supported PHP version, not the interpreter currently running. For other minimum versions, inspect the available sets and explain that no matching wrapper is provided. Plain
-`ecs.php` and `rector.php` do not select a migration level. Inspect actual configuration files: an ECS entrypoint returns a builder; the Rector configuration returns a
-closure that receives `RectorConfig`. Do not assume interchangeable wrapper shapes.
+supported PHP version, not the interpreter currently running. For other minimum versions, inspect the available sets
+and explain that no matching wrapper is provided. Plain `ecs.php` and `rector.php` do not select a migration level.
+`ecs-83.php` applies the PHP 8.2 rule set because the package has no 8.3-specific ECS rules. Inspect actual
+configuration files: an ECS entrypoint returns a builder; the Rector configuration returns a closure that receives
+`RectorConfig`. Do not assume interchangeable wrapper shapes.
+
+The package can also scaffold the root `ecs.php` and `rector.php` wrappers through its `scaffold.json` in `preserve`
+mode, which never overwrites an existing file. Check for existing root wrappers and the project's scaffold
+configuration before writing one, and edit the existing wrapper instead of replacing it.
 
 Preserve consumer paths and justified skips. Run non-mutating checks first; ECS/Rector fix commands change files.
 Do not raise the language target merely to clear a finding. Verify installed ECS/Rector compatibility and the selected
