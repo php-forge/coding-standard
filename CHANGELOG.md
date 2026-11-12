@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## 0.3.5 Under development
 
 - chore: standardize package guidance, skill discovery, configuration checks and security reporting.
+- chore: align AI assistance guidance and add OpenSSF Scorecard publishing and its dynamic badge.
 
 ## 0.3.4 September 07, 2026
 

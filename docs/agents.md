@@ -1,55 +1,74 @@
 # AI assistance
 
-Use the package-owned [php-forge-coding-standard](../skills/php-forge-coding-standard/SKILL.md) skill for selecting PHP Forge ECS and Rector configurations for a supported PHP target. The canonical source is `skills/`; checkout discovery links in `.agents/skills/` and `.claude/skills/` point to that same source.
+The package owns [php-forge-coding-standard](../skills/php-forge-coding-standard/SKILL.md), a skill for selecting and
+verifying shared ECS and Rector configurations against a consumer's minimum PHP version.
 
 ## Install in an application
 
-Composer is the primary distribution path. `extra.skills.source` declares the bundle; installing the package alone does
-not register its skill at the application root. In a consumer already configured for `llm/skills`, explicitly trust
-`php-forge/coding-standard` and use that installed synchronizer's documented setup. Do not enable plugins or broaden trust by
-copying an example. With verified auto-sync enabled, installation/update can synchronize the bundle; otherwise use
-`composer skills:update` and inspect `composer skills:show`. Composer exit zero is not proof of client activation.
+### Automatic Composer installation
 
-An optional pinned installer can use a local checkout or an installed package that contains the bundle:
+Install `php-forge/coding-standard` as described in the [README](../README.md#installation). Complete the
+[one-time application setup](https://yii2-framework.github.io/docs/project/ai-agents/#composer-installation) for
+`llm/skills`, enable `auto-sync` in `skills.json`, and explicitly trust `php-forge/coding-standard` in
+`dependencies.composer.trusted`. The installed package must contain the skill bundle declared by `extra.skills.source`.
+
+```bash
+composer install
+composer skills:show
+```
+
+With auto-sync disabled, run `composer skills:update` after installing or updating dependencies. Installing this package
+alone does not register its skill at the application root. Check the synchronizer's output; Composer success alone does
+not prove synchronization or activation.
+
+### Optional npx installation
+
+From the application root, list and install from a checkout containing the skill:
 
 ```bash
 npx skills@1.7.2 add /absolute/path/to/coding-standard --list
-npx skills@1.7.2 add /absolute/path/to/coding-standard --skill php-forge-coding-standard --agent claude-code codex opencode
+npx skills@1.7.2 add /absolute/path/to/coding-standard \
+  --skill php-forge-coding-standard --agent claude-code codex opencode
 ```
 
-Keep project scope. Inspect a remote source with `--list` before claiming an unpublished skill is available there.
-Copied installations must be refreshed after upgrades. The complete skill directory is the unit of installation.
+An installed `./vendor/php-forge/coding-standard` may be used when that revision contains the bundle. Inspect a remote
+source before assuming it is published. Keep project scope and refresh copied skills after upgrades.
 
-## Discover and invoke
+## Native discovery and activation
 
-Open a fresh client session at the checkout or consumer root. Codex discovers `.agents/skills/php-forge-coding-standard/` and supports
-`$php-forge-coding-standard` or its skill picker. Claude Code uses `.claude/skills/php-forge-coding-standard/` and `/php-forge-coding-standard`. For OpenCode, verify the
-installed client's native skill tool and shared paths. Do not assume one client's invocation syntax works in another.
+| Client      | Project directory                           | Explicit invocation                               |
+| ----------- | ------------------------------------------- | ------------------------------------------------- |
+| Codex       | `.agents/skills/php-forge-coding-standard/` | `$php-forge-coding-standard` or the skill picker  |
+| Claude Code | `.claude/skills/php-forge-coding-standard/` | `/php-forge-coding-standard`                      |
+| OpenCode    | `.agents/skills/php-forge-coding-standard/` | Request the skill through the client's skill tool |
+
+The checkout links both discovery paths to the canonical directory. Open a fresh session at the application root and
+check the available skills. Source listing, native discovery, activation and successful task behavior are separate
+checks; manually reading the skill or supplying its body does not prove native activation.
 
 ## Example prompts
 
-Explicit Codex invocation:
+### Explicit invocation
 
 ```text
 $php-forge-coding-standard
-Prepare ECS and Rector wrappers for a PHP 8.1 consumer using this package. Preserve its src/tests paths and demonstrate dry-run commands; do not upgrade syntax to the host PHP version.
+Prepare ECS and Rector wrappers for a PHP 8.1 consumer using the installed package. Preserve src and tests paths.
+Show non-mutating commands and check that the running PHP version does not change the target. Do not install
+dependencies.
 ```
 
-Natural selection:
+### Natural selection
 
 ```text
-My project supports PHP 8.1 but runs tools on PHP 8.5. Configure its ECS and Rector wrappers using php-forge/coding-standard, preserve src and tests paths, and show non-mutating checks.
+My project supports PHP 8.1 but runs tools on PHP 8.5. Configure ECS and Rector using the installed
+php-forge/coding-standard package, preserve src and tests paths, and show non-mutating checks.
 ```
 
-Record whether the client loads this skill rather than a global same-named copy. As an unrelated negative control, ask it to explain HTTP 301 versus 302 without inspecting the
-repository or loading package skills.
+### Verify the outcome
 
-## Verify the result
-
-Capture the native load/tool evidence and selected source path, then execute the generated task checks against the
-installed package. Cover the normal operation, the described boundary case and a failure/unsupported input. Inspect
-generated code before executing it; use disposable fixtures for writes. Run the package's actual non-mutating checks
-and report runtime versions, warnings and unavailable dependencies. Listing, manually reading the skill, or supplying
-its body in a prompt does not prove native activation or functional execution.
+Inspect the installed revision and the selected entrypoints. Confirm the ECS builder and Rector closure are used in the
+correct wrappers, and run the proposed commands against disposable fixtures. Cover an unsupported target and check
+that dry runs do not modify inputs. Capture native load evidence and the selected source path separately from executable
+results. As a negative selection control, ask an unrelated question in a fresh session without loading package skills.
 
 [Back to README](../README.md)

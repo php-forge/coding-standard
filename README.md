@@ -187,15 +187,17 @@ Follow the same convention used across PHP Forge repositories:
 }
 ```
 
-## Testing
-
-Run `composer tests` to check that each versioned ECS and Rector configuration detects a sample transformation
-without modifying the input. Development dependencies require PHP 8.3 or later; the package runtime supports PHP 8.1.
-
 ## AI assistance
 
-Use the [php-forge-coding-standard skill](skills/php-forge-coding-standard/SKILL.md) and the [AI assistance guide](docs/agents.md) for
-package-specific setup, invocation examples and verification.
+AI agents can use the [documentation index](https://yii2-framework.github.io/docs/llms.txt) to discover ecosystem pages
+and fetch a page's Markdown version by appending `index.md` to its URL. The local
+[AI assistance guide](docs/agents.md) covers skill installation, client setup and verification.
+
+- [`php-forge-coding-standard` skill](skills/php-forge-coding-standard/SKILL.md): ECS and Rector configuration.
+
+Match guidance to the installed package revision. If hosted documentation is unavailable or does not match, use this
+README, the [skill source](skills/php-forge-coding-standard/SKILL.md), the source configuration and the
+[changelog](CHANGELOG.md).
 
 ## Package information
 
@@ -206,8 +208,18 @@ package-specific setup, invocation examples and verification.
 ## Project status
 
 [![Quality](https://img.shields.io/github/actions/workflow/status/php-forge/coding-standard/quality.yml?style=for-the-badge&label=Quality&logo=github)](https://github.com/php-forge/coding-standard/actions/workflows/quality.yml)
-[![Zizmor](https://img.shields.io/github/actions/workflow/status/php-forge/coding-standard/security.yml?style=for-the-badge&label=Zizmor&logo=github)](https://github.com/php-forge/coding-standard/actions/workflows/security.yml)
 [![StyleCI](https://img.shields.io/badge/StyleCI-Passing-44CC11.svg?style=for-the-badge&logo=github&logoColor=white)](https://github.styleci.io/repos/1141292628?branch=main)
+
+## Security
+
+[![OpenSSF Scorecard](https://api.scorecard.dev/projects/github.com/php-forge/coding-standard/badge?style=for-the-badge)](https://scorecard.dev/viewer/?uri=github.com/php-forge/coding-standard)
+[![Zizmor](https://img.shields.io/github/actions/workflow/status/php-forge/coding-standard/security.yml?style=for-the-badge&label=Zizmor&logo=github)](https://github.com/php-forge/coding-standard/actions/workflows/security.yml)
+
+## Built with AI
+
+[![Built with Claude Code](https://img.shields.io/badge/Built%20with-Claude%20Code-D97757.svg?style=for-the-badge&logo=claude&logoColor=white)](https://claude.com/claude-code)
+[![Built with Codex](https://img.shields.io/badge/Built%20with-Codex-10A37F.svg?style=for-the-badge&logo=openaigym&logoColor=white)](https://openai.com/codex)
+[![Reviewed by CodeRabbit](https://img.shields.io/badge/Reviewed%20by-CodeRabbit-FF570A.svg?style=for-the-badge&logo=coderabbit&logoColor=white)](https://www.coderabbit.ai)
 
 ## Our social networks
 
