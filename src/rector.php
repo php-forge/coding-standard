@@ -14,7 +14,7 @@ use Rector\TypeDeclaration\Rector\Class_\TypedPropertyFromCreateMockAssignRector
  * import either this file (no version target) or one of the version-pinned wrappers (`rector-81.php`, `rector-82.php`,
  * `rector-83.php`, `rector-84.php`) and set their own paths.
  *
- * The version-pinned wrappers add the matching `SetList::PHP_XX` and `LevelSetList::UP_TO_PHP_XX` on top of this base.
+ * The version-pinned wrappers add the matching `LevelSetList::UP_TO_PHP_XX` on top of this base.
  */
 return static function (RectorConfig $rectorConfig): void {
     $rectorConfig->parallel();
