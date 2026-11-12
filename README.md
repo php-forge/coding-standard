@@ -1,7 +1,7 @@
 <!-- markdownlint-disable MD041 -->
 <p align="center">
     <a href="https://github.com/php-forge/coding-standard" target="_blank">
-        <img src="https://avatars.githubusercontent.com/u/103309199?s%25253D400%252526u%25253Dca3561c692f53ed7eb290d3bb226a2828741606f%252526v%25253D4" width="35%" alt="PHP Forge">
+        <img src="https://avatars.githubusercontent.com/u/103309199?s=400" width="35%" alt="PHP Forge">
     </a>
     <h1 align="center">Coding standard</h1>
     <br>
@@ -40,21 +40,21 @@ Then run `composer update`.
 
 This package ships shared ECS and Rector configurations under `vendor/php-forge/coding-standard/src/`:
 
-| File                | Purpose                                                 |
-| ------------------- | ------------------------------------------------------- |
-| `src/ecs.php`       | Shared ECS base rules, no PHP migration set             |
-| `src/ecs-81.php`    | Base + `@PHP81Migration` PHP-CS-Fixer set               |
-| `src/ecs-82.php`    | Base + `@PHP82Migration`                                |
-| `src/ecs-83.php`    | Base + `@PHP83Migration`                                |
-| `src/ecs-84.php`    | Base + `@PHP84Migration`                                |
-| `src/rector.php`    | Shared Rector base rules, no PHP level set              |
-| `src/rector-81.php` | Base + `SetList::PHP_81` + `LevelSetList::UP_TO_PHP_81` |
-| `src/rector-82.php` | Base + `SetList::PHP_82` + `LevelSetList::UP_TO_PHP_82` |
-| `src/rector-83.php` | Base + `SetList::PHP_83` + `LevelSetList::UP_TO_PHP_83` |
-| `src/rector-84.php` | Base + `SetList::PHP_84` + `LevelSetList::UP_TO_PHP_84` |
+| File              | Purpose                                            |
+| ----------------- | -------------------------------------------------- |
+| src/ecs.php       | Shared ECS base rules, no PHP migration set        |
+| src/ecs-81.php    | Base + `@PHP81Migration`                           |
+| src/ecs-82.php    | Base + `@PHP82Migration`                           |
+| src/ecs-83.php    | Base + `@PHP82Migration` (no additional 8.3 rules) |
+| src/ecs-84.php    | Base + `@PHP84Migration`                           |
+| src/rector.php    | Shared Rector base rules, no PHP level set         |
+| src/rector-81.php | Base + `LevelSetList::UP_TO_PHP_81`                |
+| src/rector-82.php | Base + `LevelSetList::UP_TO_PHP_82`                |
+| src/rector-83.php | Base + `LevelSetList::UP_TO_PHP_83`                |
+| src/rector-84.php | Base + `LevelSetList::UP_TO_PHP_84`                |
 
-Pick the version that matches the **minimum** PHP your project supports; Rector upgrades code up to that level and
-PHP-CS-Fixer enforces matching syntax. The plain `ecs.php` / `rector.php` apply no PHP-version migrations.
+Pick the version that matches the **minimum** PHP your project supports; Rector applies migrations up to that level and
+ECS applies the corresponding non-risky migration rules. These tools do not prove minimum-version compatibility. The plain `ecs.php` / `rector.php` apply no PHP-version migrations.
 
 ### ECS wrapper (ecs.php)
 
@@ -187,6 +187,16 @@ Follow the same convention used across PHP Forge repositories:
 }
 ```
 
+## Testing
+
+Run `composer tests` to check that each versioned ECS and Rector configuration detects a sample transformation
+without modifying the input. Development dependencies require PHP 8.3 or later; the package runtime supports PHP 8.1.
+
+## AI assistance
+
+Use the [php-forge-coding-standard skill](skills/php-forge-coding-standard/SKILL.md) and the [AI assistance guide](docs/agents.md) for
+package-specific setup, invocation examples and verification.
+
 ## Package information
 
 [![PHP](https://img.shields.io/badge/%3E%3D8.1-777BB4.svg?style=for-the-badge&logo=php&logoColor=white)](https://www.php.net/releases/8.1/en.php)
@@ -196,8 +206,8 @@ Follow the same convention used across PHP Forge repositories:
 ## Project status
 
 [![Quality](https://img.shields.io/github/actions/workflow/status/php-forge/coding-standard/quality.yml?style=for-the-badge&label=Quality&logo=github)](https://github.com/php-forge/coding-standard/actions/workflows/quality.yml)
-[![Security](https://img.shields.io/github/actions/workflow/status/php-forge/coding-standard/security.yml?style=for-the-badge&label=Security&logo=github)](https://github.com/php-forge/coding-standard/actions/workflows/security.yml)
-[![StyleCI](https://img.shields.io/badge/StyleCI-Passed-44CC11.svg?style=for-the-badge&logo=github&logoColor=white)](https://github.styleci.io/repos/1141292628?branch=main)
+[![Zizmor](https://img.shields.io/github/actions/workflow/status/php-forge/coding-standard/security.yml?style=for-the-badge&label=Zizmor&logo=github)](https://github.com/php-forge/coding-standard/actions/workflows/security.yml)
+[![StyleCI](https://img.shields.io/badge/StyleCI-Passing-44CC11.svg?style=for-the-badge&logo=github&logoColor=white)](https://github.styleci.io/repos/1141292628?branch=main)
 
 ## Our social networks
 

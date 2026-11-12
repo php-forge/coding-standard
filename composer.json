@@ -41,6 +41,9 @@
             "allowed-packages": [
                 "php-forge/baseline"
             ]
+        },
+        "skills": {
+            "source": "skills"
         }
     },
     "config": {
@@ -50,7 +53,6 @@
         }
     },
     "scripts": {
-        "tests": "php tests/ecs.php",
         "ecs": "./vendor/bin/ecs check src --config src/ecs-83.php --fix",
         "rector": "./vendor/bin/rector process src --config src/rector-83.php"
     }

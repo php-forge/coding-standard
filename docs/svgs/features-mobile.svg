@@ -24,15 +24,15 @@
     <g>
         <rect class="box-bg" x="16" y="216" width="588" height="84" rx="6"/>
         <rect x="16" y="216" width="4" height="84" fill="#1f883d"/>
-        <text class="title" x="32" y="242">Metadata &amp; Linter Standards</text>
-        <text class="content" x="32" y="266">.editorconfig, .gitignore, .gitattributes, Prettier, stylelint baselines</text>
-        <text class="content" x="32" y="284">Super-Linter configs: actionlint, codespell, gitleaks, markdownlint</text>
+        <text class="title" x="32" y="242">Independent Configurations</text>
+        <text class="content" x="32" y="266">Shared ECS and Rector rules have no project-specific paths</text>
+        <text class="content" x="32" y="284">Choose the target matching the minimum supported PHP version</text>
     </g>
     <g>
         <rect class="box-bg" x="16" y="316" width="588" height="84" rx="6"/>
         <rect x="16" y="316" width="4" height="84" fill="#1f883d"/>
         <text class="title" x="32" y="342">Scaffold Provider</text>
-        <text class="content" x="32" y="366">yii2-extensions/scaffold integration distributes files on install</text>
-        <text class="content" x="32" y="384">Modes replace, append and preserve protect local edits</text>
+        <text class="content" x="32" y="366">Optional scaffold integration distributes wrapper templates</text>
+        <text class="content" x="32" y="384">Preserve mode keeps consumer wrapper edits</text>
     </g>
 </svg>

@@ -114,3 +114,16 @@ Thumbs.db
 .buildpath
 .project
 .settings
+
+# Package skill discovery; keep other local client state private.
+!/.agents/
+/.agents/*
+!/.agents/skills/
+/.agents/skills/*
+!/.agents/skills/php-forge-coding-standard
+!/.claude/
+/.claude/*
+!/.claude/skills/
+/.claude/skills/*
+!/.claude/skills/php-forge-coding-standard
+/internal/

@@ -9,7 +9,7 @@ use PhpCsFixer\Fixer\Phpdoc\PhpdocTypesOrderFixer;
 use PhpCsFixer\Fixer\PhpUnit\PhpUnitTestCaseStaticMethodCallsFixer;
 use PhpCsFixer\Fixer\Strict\{DeclareStrictTypesFixer, StrictComparisonFixer, StrictParamFixer};
 use PhpCsFixer\Fixer\StringNotation\SingleQuoteFixer;
-use PhpCsFixer\Fixer\Whitespace\HeredocIndentationFixer;
+use PhpCsFixer\Fixer\Whitespace\{HeredocIndentationFixer, NoExtraBlankLinesFixer};
 use Symplify\EasyCodingStandard\Config\ECSConfig;
 
 return ECSConfig::configure()
@@ -86,5 +86,8 @@ return ECSConfig::configure()
         ],
     )
     ->withSkip(
-        [HeredocIndentationFixer::class],
+        [
+            HeredocIndentationFixer::class,
+            NoExtraBlankLinesFixer::class,
+        ],
     );
