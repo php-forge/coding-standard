@@ -187,17 +187,23 @@ Follow the same convention used across PHP Forge repositories:
 }
 ```
 
+## Documentation
+
+- ⚙️ [Configuration files](#configuration-files)
+- 🧪 [Composer scripts](#composer-scripts)
+
 ## AI assistance
 
-AI agents can use the [documentation index](https://yii2-framework.github.io/docs/llms.txt) to discover ecosystem pages
-and fetch a page's Markdown version by appending `index.md` to its URL. The local
-[AI assistance guide](docs/agents.md) covers skill installation, client setup and verification.
+AI agents: read the [documentation index](https://yii2-framework.github.io/docs/llms.txt) and fetch the Markdown version
+of a page by appending `index.md` to its URL. The
+[AI agents guide](https://github.com/yii2-framework/docs/blob/main/src/content/docs/project/ai-agents.md) covers skill
+installation, client setup and verification.
 
-- [`php-forge-coding-standard` skill](skills/php-forge-coding-standard/SKILL.md): ECS and Rector configuration.
+- 🤖 [`php-forge-coding-standard` skill](https://github.com/php-forge/coding-standard/blob/main/docs/agents.md):
+  ECS and Rector configuration.
 
-Match guidance to the installed package revision. If hosted documentation is unavailable or does not match, use this
-README, the [skill source](skills/php-forge-coding-standard/SKILL.md), the source configuration and the
-[changelog](CHANGELOG.md).
+See the [repository guides](#documentation), the [skill source](skills/php-forge-coding-standard/SKILL.md), the source
+configuration and the [changelog](CHANGELOG.md).
 
 ## Package information
 
