@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## 0.3.6 Under development
 
 - docs: standardize README documentation links and AI assistance.
+- docs: add the Facebook link to the `README.md` social section.
 
 ## 0.3.5 November 12, 2026
 
