@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## 0.3.6 Under development
 
+- docs: standardize README documentation links and AI assistance.
+
 ## 0.3.5 November 12, 2026
 
 - chore: standardize package guidance, skill discovery, configuration checks and security reporting.
